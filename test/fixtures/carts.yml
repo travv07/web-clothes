@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  users: one
+  address_ship: MyText
+  shipper_id: 1
+  date_ship: 2020-04-08 09:53:20
+  status: 1
+
+two:
+  users: two
+  address_ship: MyText
+  shipper_id: 1
+  date_ship: 2020-04-08 09:53:20
+  status: 1
