@@ -1,0 +1,203 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// header
+.left-navbar-header {
+  width: 30%;
+}
+.center-navbar-header {
+  width: 40%;
+}
+.nav-item{
+  width: 33%;
+}
+.nav-link {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 500;
+}
+.right-navbar-header {
+  width: 30%
+}
+.icon-item {
+  width: 33%;
+}
+.menu-user.show {
+  margin-left: -120px;
+}
+
+.footer-spree-menu-links a {
+  color: black;
+  font-size: 0.875rem;
+}
+.header-clothes {
+  background: #ffffff;
+  color: black;
+  border-color: #e2e2e2 !important;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 16;
+}
+.layouts-header {
+  height: 90px;
+}
+.homepage-hero-image {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 600px;
+  width: 100%;
+  overflow: hidden;
+}
+.homepage-hero-image .hero-content {
+  position: absolute;
+  z-index: 1;
+  right: 10%;
+}
+.homepage-hero-image-text {
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 1.27;
+  letter-spacing: 0.55px;
+  color: #fb9d88;
+  width: 400px;
+}
+.spree-btn {
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.homepage-hero-image .spree-btn {
+  font-size: 2rem;
+}
+
+.container {
+  padding-right: 17px;
+  padding-left: 17px;
+}
+
+.image-men {
+  height: 390px;
+  width: 100%;
+}
+.image-women{
+  width: 573.5px;
+  height: 796px;
+}
+.image-sport{
+  height: 390px;
+  width: 100%;
+}
+.homepage-taxon-box {
+  display: block;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.homepage-taxon-box-text {
+  width: 100%;
+  text-transform: uppercase;
+  color: black;
+  position: absolute;
+  left: 0;
+  bottom: 21px;
+  justify-content: center;
+  display: flex;
+}
+.homepage-taxon-box h3 {
+  margin: 0;
+  width: auto;
+  background: #ffffff;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 2;
+  letter-spacing: 0.35px;
+  padding: 0 5%;
+}
+.homepage-taxon-box h3 {
+  font-size: 2rem;
+}
+.image-new-collection{
+  height: 371.7px;
+  width: 573.5px;
+}
+.image-summer{
+  height: 371.7px;
+  width: 100%;
+}
+.homepage-bottom-box {
+  background: #f2f2f2;
+  color: black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;
+}
+.homepage-bottom-box-inner {
+  background: #ffffff;
+  margin: auto;
+  position: absolute;
+  width: 70%;
+  left: 15%;
+}
+.homepage-bottom-box-inner {
+  padding: 30px 100px;
+}
+.homepage-bottom-box-inner-small-text {
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: 0.25px;
+  text-align: center;
+  color: #0074c2;
+}
+.homepage-bottom-box-inner-big-text {
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.38px;
+  text-align: center;
+  color: black;
+}
+.homepage-bottom-box-inner-small-text {
+  font-size: 1.125rem;
+}
+.homepage-bottom-box-inner-big-text {
+  font-size: 1.6875rem;
+}
+.homepage-carousel-text {
+  font-size: 22px;
+}
+.image-product{
+  height: 350px;
+}
+.product-component-name {
+  font-weight: 500;
+  color: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  margin-top: 1rem;
+}
+.product-component-price {
+  color: black;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  margin-top: 1rem;
+}
+.row.carousel-items-container {
+  width: 100%;
+}
+.row.carousel-items-container {
+  width: 100%;
+  padding: 0 5px 5px 40px;
+}
