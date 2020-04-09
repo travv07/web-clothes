@@ -201,3 +201,49 @@
   width: 100%;
   padding: 0 5px 5px 40px;
 }
+.centered-form{
+  margin-top: 60px;
+}
+
+.centered-form .panel{
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+.spree-flat-input, .spree-flat-select {
+  color: #4c4c4c;
+  transition: border-color 0.35s ease;
+  padding: 15px;
+  width: 100%;
+  height: auto;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e2e2e2;
+  border-radius: 0;
+  outline: none;
+  font-size: 0.75rem;
+  line-height: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.spree-header {
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+}
+.spree-btn {
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.spree-btn.btn-primary {
+  font-size: 1.25rem;
+}
+.text-sign-up {
+  font-size: 1rem;
+  line-height: inherit;
+}

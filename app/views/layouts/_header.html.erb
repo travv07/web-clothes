@@ -30,7 +30,7 @@
             <i class="fa fa-user dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
               <div class="dropdown-menu menu-user" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#">Log in</a>
-                <a class="dropdown-item" href="#">Log up</a>
+                <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
               </div>
           </li>
           <li class="icon-item">
