@@ -1,26 +1,27 @@
-<h2>Log in</h2>
+<div class="col-lg-6 offset-lg-3">
+  <h3 class="spree-header spree-mb-large spree-mt-large">Sign in</h3>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <div class="form-group mb-5">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "EMAIL", class: "spree-flat-input" %>
+    </div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
+    <div class="form-group mb-2">
+      <%= f.password_field :password, autocomplete: "off", placeholder: "PASSWORD", class: "spree-flat-input" %>
+    </div>
+    <% if devise_mapping.rememberable? -%>
+    <div class="form-group mb-2">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :remember_me, class: "spree-text" %>
     </div>
   <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.submit "Sign in", class: "btn btn-primary btn-block spree-btn mb-5" %>
+    </div>
+  <% end %>
+  <h3 class="spree-header header-sm spree-mt-medium mb-3 mb-sm-4 mb-xl-4">Already have an account?</h3>
 
-<%= render "users/shared/links" %>
+  <%= render "users/shared/links" %>
+</div>
