@@ -19,6 +19,7 @@ gem "bootstrap", "~> 4.4.1"
 gem "jquery-rails"
 gem "font-awesome-rails"
 gem "devise"
+gem "cancancan"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", ">= 2.15"
