@@ -1,0 +1,16 @@
+<% if object.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      <% if object.errors.size > 1  %>
+        <p> The form contains <%= object.errors.size %> errors</p>
+      <% else %>
+        <p>The form contains <%= object.errors.size %> error</p>
+      <% end %>
+      <ul>
+        <% object.errors.full_messages.each do |msg| %>
+          <li> <%= msg %> </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
