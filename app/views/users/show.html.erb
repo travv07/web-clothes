@@ -1,0 +1,60 @@
+<div class="container account-page">
+  <h3 class="text-uppercase spree-mb-large spree-mt-large spree-header" >My Account</h3>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-4">
+      <div class="card">
+        <div class="content-image-user">
+          <% if @user.avatar %>
+            <%= image_tag @user.avatar.url, alt: "Card image", class: "card-img-top w-100 image-user" %>
+          <% else %>
+            <%= image_tag "men1.jpg", alt: "Card image", class: "card-img-top w-100 image-user" %>
+          <% end %>
+          <i class="fa fa-edit btn-edit-user-image"></i>
+        </div>
+        <div class="card-body">
+          <p class="text-uppercase spree-mb-large spree-mt-large "><%= @user.name %></p>
+          <p class="spree-mb-large spree-mt-large "><%= @user.email %></p>
+          <%= link_to '<i class="fa fa-edit" aria-hidden="true"></i> Edit'.html_safe,
+            "", class: "btn btn-secondary user-edit-btn"%>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-lg-8 mt-sm-5 mt-lg-0 ">
+      <div class="row content-user">
+        <div class="col-md-12 mb-2 p-2 header-infor">
+          <h5 class="mb-1 text-center"> Information User </h5>
+        </div>
+        <div class="col-md-3">
+          <p><strong>Full Name </strong></p>
+        </div>
+        <div class="col-md-9">
+          <%=  @user.name %>
+        </div>
+        <div class="col-md-3">
+          <p><strong>Email</strong></p>
+        </div>
+        <div class="col-md-9">
+          <%=  @user.email %>
+        </div>
+        <div class="col-md-3">
+          <p><strong>Phone number</strong></p>
+        </div>
+        <div class="col-md-9">
+          <%=  @user&.phone_number %>
+        </div>
+        <div class="col-md-3">
+          <p><strong>Address</strong></p>
+        </div>
+        <div class="col-md-9">
+          <%=  @user&.address %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="account-page-orders mt-3" id="account-my-orders">
+    <h3 class="text-uppercase spree-mb-medium spree-mt-medium spree-header" >My Orders</h3>
+      <p class="text-center">You have no orders yet</p>
+    <br />
+  </div>
+</div>

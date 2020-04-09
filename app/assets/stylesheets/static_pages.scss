@@ -247,3 +247,33 @@
   font-size: 1rem;
   line-height: inherit;
 }
+.btn-edit-user-image {
+  position: absolute;
+  background: #797878;
+  transition: .5s ease;
+  opacity: 0.7;
+  color: white;
+  padding: 8px;
+  right: 22px
+}
+.content-image-user {
+  padding: 22px;
+}
+.image-user, .card {
+  box-shadow: 5px 5px 5px 0px #bdbdbd;
+}
+.header-infor {
+  background: #c3c3c3;
+}
+.account-page-orders {
+  border-top: 1px solid #e2e2e2;
+}
+.account-page h3 {
+  color: black;
+  margin: 33px 0;
+  font-size: 2rem;
+}
+.content-user {
+  border: 1px solid #e2e2e2;
+  box-shadow: 5px 5px 5px 0px #bdbdbd;
+}
