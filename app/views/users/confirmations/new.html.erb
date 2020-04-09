@@ -1,16 +1,17 @@
-<h2>Resend confirmation instructions</h2>
+<div class="col-lg-6 offset-lg-3">
+  <h3 class="spree-header spree-mb-large spree-mt-large">Resend confirmation instructions</h3>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "users/shared/error_messages", object: resource  %>
+    <div class="form-group mb-2">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "EMAIL", class: "spree-flat-input",value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
-  </div>
+    <div class="actions">
+      <%= f.submit "Resend confirmation instructions", class: "btn btn-primary btn-block spree-btn mb-5" %>
+    </div>
+  <% end %>
+  <h3 class="spree-header header-sm spree-mt-medium mb-3 mb-sm-4 mb-xl-4">Already have an account?</h3>
 
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+  <%= render "users/shared/links" %>
+</div>

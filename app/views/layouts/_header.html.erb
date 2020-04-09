@@ -28,10 +28,16 @@
           </li>
           <li class="dropdown icon-item">
             <i class="fa fa-user dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+            <% if current_user  %>
               <div class="dropdown-menu menu-user" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Log in</a>
-                <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
+                <%= link_to "Profile", "#", class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path , method: :delete, class: "dropdown-item" %>
               </div>
+            <% else %>
+              <div class="dropdown-menu menu-user" aria-labelledby="dropdownMenuButton">
+                <%= link_to "Sign in", new_user_session_path, class: "dropdown-item" %>
+                <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
+            <% end %>
           </li>
           <li class="icon-item">
             <i class="fa fa-shopping-cart"></i>
