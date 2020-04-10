@@ -1,0 +1,68 @@
+<div id="no-taxon-banner">
+  <div class="container h-100">
+    <%= image_tag "shop.jpg", class: "image-products-bia w-100" %>
+  </div>
+</div>
+<div class="container dropdown d-none d-lg-flex justify-content-end mt-5 pr-4 pb-3 plp-sort">
+  <div data-toggle="dropdown" class="plp-sort-header">
+    SORT BY <i class="fa fa-angle-down"></i>
+  </div>
+  <div class="dropdown-menu text-right plp-sort-dropdown">
+    <ul class="pt-1 plp-sort-dropdown-ul">
+      <li class="p-3 plp-sort-dropdown-ul-li--active">
+        <a href="">DEFAULT</a>
+      </li>
+      <li class="p-3 plp-sort-dropdown-ul-li">
+        <a href="">NEWEST FIRST</a>
+      </li>
+      <li class="p-3 plp-sort-dropdown-ul-li">
+        <a href="">PRICE (HIGH - LOW)</a>
+      </li>
+      <li class="p-3 plp-sort-dropdown-ul-li">
+        <a href="">PRICE (LOW - HIGH)</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="container mb-3 d-md-flex">
+  <div id="plp-filters-accordion" class="d-none d-lg-block col-lg-3 pr-5 position-sticky h-100 plp-filters" data-hook="taxon_sidebar_navigation">
+    <div class="w-100 card1 plp-filters-card">
+      <div class="card-header1 text-capitalize collapsed px-1 plp-filters-card-header" id="filtersPrice" data-toggle="collapse" data-target="#collapseFilterPrice" aria-expanded="false" aria-controls="collapseFilterPrice" role="heading" aria-level="2">
+        price <i class="fa fa-plus mt-1 float-right"></i>
+      </div>
+      <div id="collapseFilterPrice" class="collapse " aria-labelledby="filtersPrice">
+        <div class="card-body px-0 pt-1">
+          <a class="d-block" href="/products?price=Less+than+%2450">
+            <div class="d-inline-block py-1 px-2 m-1 text-uppercase plp-filters-card-item ">
+              Less than $50
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 col-lg-9" data-hook="homepage_products">
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="col-sm-4 col-6 mb-3 mb-md-4 pr-sm-0 pr-md-0 pl-md-4 pl-sm-4 pl-0 pr-2">
+          <a class="h-100 d-flex flex-column justify-content-between" href="">
+            <% if product.image.url  %>
+              <%= image_tag product.image.url, class: "image-products w-100" %>
+            <% else %>
+              <%= image_tag "sale1.jpg", class: "image-products w-100" %>
+            <% end %>
+            <div>
+              <div class="product-component-name" title="Oversize Sweatshirt">
+                <%= product.name %>
+              </div>
+              <div class="product-component-price"><%= number_to_currency(product.price, :unit => "$") %></div>
+            </div>
+          </a>
+        </div>
+      <% end %>
+    </div>
+    <div class="float-right">
+      <%= will_paginate @products %>
+    </div>
+  </div>
+</div>

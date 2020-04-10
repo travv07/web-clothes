@@ -1,11 +1,11 @@
 <div class="homepage-hero-image mb-3 position-relative">
-  <%= image_tag "bia.jpg", alt: "Summer collection" %>
+  <%= image_tag "bia.jpg", alt: "Summer collection", class: "image-bia w-100 h-100" %>
   <div class="hero-content">
     <div class="homepage-hero-image-text mb-2 mx-auto pb-3 pb-md-4">
       Summer Collection
     </div>
     <div>
-      <a class="btn btn-secondary spree-btn px-5" href="">SHOP NOW</a>
+      <%= link_to "SHOP NOW", products_path, class: "btn btn-secondary spree-btn px-5"  %>
     </div>
   </div>
 </div>
@@ -15,7 +15,7 @@
     <div class="col-6">
       <div class="homepage-taxon-box mb-3">
         <a href="/t/men">
-          <%= image_tag "men1.jpg", alt: "Men", class: "image-men" %>
+          <%= image_tag "men.jpg", alt: "Men", class: "image-men" %>
           <div class="homepage-taxon-box-text">
             <h3>MEN</h3>
           </div>
@@ -33,7 +33,7 @@
     <div class="col-6 d-flex flex-column">
       <div class="homepage-taxon-box flex-grow-1">
         <a href="/t/women">
-          <%= image_tag "women1.jpeg", alt: "Women", class: "image-women" %>
+          <%= image_tag "women2.jpeg", alt: "Women", class: "image-women" %>
           <div class="homepage-taxon-box-text">
             <h3>WOMEN</h3>
           </div>
