@@ -5,17 +5,23 @@
     <div class="col-xs-12 col-lg-4">
       <div class="card">
         <div class="content-image-user">
-          <% if @user.avatar %>
+          <% if @user&.avatar&.url %>
             <%= image_tag @user.avatar.url, alt: "Card image", class: "card-img-top w-100 image-user" %>
           <% else %>
             <%= image_tag "men1.jpg", alt: "Card image", class: "card-img-top w-100 image-user" %>
           <% end %>
-          <i class="fa fa-edit btn-edit-user-image"></i>
+          <% if can? :update_image, @user %>
+            <button type="button" class="btn btn-secondary edit_image btn-edit-user-image" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+              <i class="fa fa-edit" aria-hidden="true"></i>
+            </button>
+          <% end %>
         </div>
         <div class="card-body">
           <p class="text-uppercase spree-mb-large spree-mt-large "><%= @user.name %></p>
           <p class="spree-mb-large spree-mt-large "><%= @user.email %></p>
-          <%= link_to '<i class="fa fa-edit" aria-hidden="true"></i> Edit'.html_safe, edit_user_registration_path(), class: "btn btn-secondary user-edit-btn"%>
+          <% if can? :edit, @user %>
+            <%= link_to '<i class="fa fa-edit" aria-hidden="true"></i> Edit'.html_safe, edit_user_registration_path(), class: "btn btn-secondary user-edit-btn"%>
+          <% end %>
         </div>
       </div>
     </div>
@@ -57,3 +63,24 @@
     <br />
   </div>
 </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"> Update image user </h5>
+        </div>
+          <%= form_for @user, url: update_image_user_path(@user), method: :patch, remote: true do |f|%>
+            <div class="modal-body">
+              <div class="form-group">
+                <%= f.file_field :avatar, required: true, accept:'image/*' %>
+              </div>
+            </div>
+            <div class="message"></div>
+            <div class="modal-footer">
+              <%= f.submit "Update image", class: "btn btn-primary closemodal" %>
+              <button type="button" class="btn btn-secondary btn-close-modal" data-dismiss="modal"> Close </button>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>

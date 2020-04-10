@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize user, controller_namespace
-    # alias_action :update, :edit, to: :modify
+    alias_action :show, :update, :update_image, :edit, to: :modify
     # alias_action :update, :edit, :destroy, to: :ued
 
     return unless user
@@ -15,7 +15,7 @@ class Ability
         can :manage, :all
         can :manage, User
       else
-        can :show, User, id: user.id
+        can :modify, User, id: user.id
       end
     end
   end

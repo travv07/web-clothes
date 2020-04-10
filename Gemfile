@@ -20,6 +20,7 @@ gem "jquery-rails"
 gem "font-awesome-rails"
 gem "devise"
 gem "cancancan"
+gem "carrierwave", "~> 2.0"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", ">= 2.15"
