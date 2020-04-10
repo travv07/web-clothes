@@ -3,5 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   has_many :carts
 
+  validates :name, presence: true
+
   enum role: [:admin, :customer]
 end
