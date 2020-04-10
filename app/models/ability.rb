@@ -13,8 +13,9 @@ class Ability
     else
       if user.admin?
         can :manage, :all
+        can :manage, User
       else
-        can :manage, :all
+        can :show, User, id: user.id
       end
     end
   end
