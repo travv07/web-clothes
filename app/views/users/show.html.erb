@@ -15,8 +15,7 @@
         <div class="card-body">
           <p class="text-uppercase spree-mb-large spree-mt-large "><%= @user.name %></p>
           <p class="spree-mb-large spree-mt-large "><%= @user.email %></p>
-          <%= link_to '<i class="fa fa-edit" aria-hidden="true"></i> Edit'.html_safe,
-            "", class: "btn btn-secondary user-edit-btn"%>
+          <%= link_to '<i class="fa fa-edit" aria-hidden="true"></i> Edit'.html_safe, edit_user_registration_path(), class: "btn btn-secondary user-edit-btn"%>
         </div>
       </div>
     </div>
