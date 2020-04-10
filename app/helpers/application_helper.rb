@@ -11,6 +11,7 @@ module ApplicationHelper
       when "error" then "alert alert-danger"
       when "danger" then "alert alert-danger"
       when "alert" then "alert alert-warning"
+      when "warning" then "alert alert-warning"
     end
   end
 end

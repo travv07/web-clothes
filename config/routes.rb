@@ -7,5 +7,8 @@ Rails.application.routes.draw do
     passwords: "users/passwords" }
   root "static_pages#home"
 
-  resources :users, only: :show
+  resources :users, only: :show do
+    patch 'update_image', on: :member
+  end
+
 end
