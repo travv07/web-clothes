@@ -1,0 +1,28 @@
+<aside class="sidebar">
+  <div class="sidebar-container">
+    <div class="sidebar-header">
+      <div class="brand">
+        <div class="logo text-uppercase">
+          <img src="https://d9rok4vaowhj0.cloudfront.net/assets/logo-314aa0df77032e4088152ccce98323cf16a0bd5b0c77fa72595a7dc217807d0e.svg" width="100%" height="100%" class="image-admin ">
+        </div> CLOTHES ADMIN
+      </div>
+    </div>
+    <nav class="menu">
+      <ul class="sidebar-menu metismenu" id="admin-course-management">
+        <li class="active">
+          <%= link_to "", class: "text-uppercase" do %>
+            <i class="fa fa-home"></i> Dashboard </a>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_products_path , class: "text-uppercase" do %>
+            <i class="fa fa-product-hunt"></i> Products
+          <% end %>
+          <a href="">
+            <i class="fa fa-th-large"></i> Items Manager <i class="fa arrow"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>

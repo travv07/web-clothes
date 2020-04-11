@@ -20,8 +20,17 @@ class ApplicationController < ActionController::Base
       redirect_to new_user_session_path
     end
   end
+
   def after_sign_out_path_for(resource)
     new_user_session_path
+  end
+
+  def after_sign_in_path_for(resource)
+    if resource.admin?
+      admin_products_path()
+    else
+      root_path
+    end
   end
 
   protected

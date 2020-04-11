@@ -8,13 +8,28 @@
   </head>
 
   <body>
-    <%= render "layouts/header" %>
-    <% flash.each do |key, value| %>
-      <div class="<%= flash_class(key) %>">
-        <%= value %>
-      </div>
+
+    <% if current_user&.admin? %>
+      <%= render "layouts/sidebar" %>
+      <article class="content dashboard-page">
+        <section class="section">
+          <% flash.each do |key, value| %>
+            <div class="<%= flash_class(key) %>">
+              <%= value %>
+            </div>
+          <% end %>
+          <%= yield %>
+        </section>
+      </article>
+    <% else %>
+      <%= render "layouts/header" %>
+        <% flash.each do |key, value| %>
+          <div class="<%= flash_class(key) %>">
+            <%= value %>
+          </div>
+        <% end %>
+        <%= yield %>
+      <%= render "layouts/footer" %>
     <% end %>
-    <%= yield %>
-    <%= render "layouts/footer" %>
   </body>
 </html>

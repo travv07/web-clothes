@@ -5,6 +5,5 @@ class User < ApplicationRecord
   has_many :carts
 
   validates :name, presence: true
-
-  enum role: [:admin, :customer]
+  enum role: {admin: 0, customer: 1}
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200409025742) do
+ActiveRecord::Schema.define(version: 20200411052422) do
 
   create_table "cart_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "carts_id"
@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 20200409025742) do
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "thumbnails_id"
     t.bigint "categories_id"
     t.bigint "comments_id"
     t.string "name"
@@ -60,15 +59,19 @@ ActiveRecord::Schema.define(version: 20200409025742) do
     t.integer "discount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
+    t.datetime "deleted_at"
     t.index ["categories_id"], name: "index_products_on_categories_id"
     t.index ["comments_id"], name: "index_products_on_comments_id"
-    t.index ["thumbnails_id"], name: "index_products_on_thumbnails_id"
+    t.index ["deleted_at"], name: "index_products_on_deleted_at"
   end
 
   create_table "thumbnails", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_thumbnails_on_product_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -102,5 +105,5 @@ ActiveRecord::Schema.define(version: 20200409025742) do
   add_foreign_key "carts", "users", column: "users_id"
   add_foreign_key "products", "categories", column: "categories_id"
   add_foreign_key "products", "comments", column: "comments_id"
-  add_foreign_key "products", "thumbnails", column: "thumbnails_id"
+  add_foreign_key "thumbnails", "products"
 end
