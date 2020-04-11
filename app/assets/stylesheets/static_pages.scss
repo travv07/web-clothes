@@ -277,3 +277,199 @@
   border: 1px solid #e2e2e2;
   box-shadow: 5px 5px 5px 0px #bdbdbd;
 }
+.image-products {
+  width: 267.48px;
+  height: 358.25px;
+  box-shadow: 5px 5px 5px 0px #bdbdbd;
+}
+.spree-flat-text{
+  text-transform: uppercase;
+  color: black;
+}
+.btn-edit-product-image {
+    position: absolute;
+}
+.row.new_product {
+    height: 50px;
+}
+.new_products {
+  margin: 0 auto;
+  width: 80%;
+}
+.header {
+    background-color: #d7dde4;
+    height: 70px;
+    position: absolute;
+    left: 240px;
+    right: 0;
+    -webkit-transition: left 0.3s ease;
+    transition: left 0.3s ease;
+    z-index: 10;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.header .header-block-collapse {
+    padding-right: 5px;
+}
+.header .header-block-collapse .collapse-btn {
+    background: none;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #85CE36;
+    font-size: 24px;
+    line-height: 40px;
+    border-radius: 0;
+    outline: none;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: initial;
+}
+.header .header-block-search {
+    padding-left: 35px;
+}
+.header .header-block-search {
+    margin-right: auto;
+    padding-left: 20px;
+}
+.header .header-block-search .input-container {
+    position: relative;
+    color: #7e8e9f;
+}
+.header .header-block-search .input-container i {
+    position: absolute;
+    pointer-events: none;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    left: 0;
+}
+
+.header .header-block-search .input-container input {
+    background-color: transparent;
+    border: none;
+    padding-left: 25px;
+    height: 40px;
+    max-width: 150px;
+}
+
+.header .header-block-nav {
+    margin-left: auto;
+    white-space: nowrap;
+    padding-right: 15px;
+}
+
+.header .header-block-nav > ul {
+    display: table;
+}
+.header .header-block-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header .header-block-nav > ul > li {
+    display: table-cell;
+    position: relative;
+}
+
+.header .header-block-nav > ul > li > a {
+    padding: 0 15px;
+    color: #4f5f6f;
+}
+.header .header-block-nav a {
+    text-decoration: none;
+}
+
+
+.header .header-block-nav .dropdown-menu {
+    margin-top: 15px;
+}
+.header .header-block-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.sidebar .sidebar-container {
+    position: absolute;
+    top: 0;
+    bottom: 51px;
+    width: 100%;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 1000px;
+}
+.sidebar-header .brand {
+    color: #fff;
+    text-align: left;
+    padding-left: 25px;
+    line-height: 70px;
+    font-size: 16px;
+}
+.logo {
+    display: inline-block;
+    width: 60px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 5px;
+    position: relative;
+}
+.logo .l {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #85CE36;
+    position: absolute;
+}
+.sidebar {
+    background-color: #3a4651;
+    width: 240px;
+    padding-bottom: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    -webkit-transition: left 0.3s ease;
+    transition: left 0.3s ease;
+    z-index: 20;
+}
+.sidebar .sidebar-menu {
+    font-size: 14px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sidebar .sidebar-menu > li.active > a  {
+    background-color: #4bcf99 !important;
+    color: #ffffff !important;
+}
+.sidebar .sidebar-menu > li.active > a:hover {
+  background-color: red;
+    color: red;
+}
+.sidebar .sidebar-menu > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 15px;
+}
+.sidebar .sidebar-menu li a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    display: block;
+}
+.content {
+    padding: 105px 40px 85px 267px;
+}
+.image-admin{
+  margin-top: -30px;
+}

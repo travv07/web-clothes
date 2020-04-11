@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <h5 class="modal-title text-uppercase" id="exampleModalLabel">  New product </h5>
+</div>
+<div class="new_products pt-2">
+<%= form_for @product,url: admin_products_path, remote: true do |f|%>
+    <div class="message"></div>
+    <%= render "users/shared/error_messages", object: @product  %>
+    <div class="form-group mb-5">
+      <%= f.text_field :name, placeholder: "NAME PRODUCT", autofocus: true, class: "spree-flat-input" %>
+    </div>
+    <div class="form-group mb-5">
+      <%= f.text_field :price, autofocus: true, placeholder: "PRICE PRODUCT",  class: "spree-flat-input" %>
+    </div>
+
+    <div class="form-group mb-5">
+      <%= f.text_field :quantity,  placeholder: "QUANTITY PRODUCT",class: "spree-flat-input" %>
+    </div>
+
+    <div class="form-group mb-5">
+      <%= f.text_field :discount,  placeholder: "DISCOUNT PRODUCT", class: "spree-flat-input" %>
+    </div>
+
+    <div class="form-group mb-5">
+      <%= f.text_area :description, placeholder: "DESCRIPTION PRODUCT", class: "spree-flat-input" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "CREATE", class: "btn btn-primary btn-block spree-btn mb-5" %>
+    </div>
+<% end %>
+</div>
+<%= render "modal" %>

@@ -69,18 +69,18 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel"> Update image user </h5>
         </div>
-          <%= form_for @user, url: update_image_user_path(@user), method: :patch, remote: true do |f|%>
-            <div class="modal-body">
-              <div class="form-group">
-                <%= f.file_field :avatar, required: true, accept:'image/*' %>
-              </div>
+        <%= form_for @user, url: update_image_user_path(@user), method: :patch, remote: true do |f|%>
+          <div class="modal-body">
+            <div class="form-group">
+              <%= f.file_field :avatar, required: true, accept:'image/*' %>
             </div>
-            <div class="message"></div>
-            <div class="modal-footer">
-              <%= f.submit "Update image", class: "btn btn-primary closemodal" %>
-              <button type="button" class="btn btn-secondary btn-close-modal" data-dismiss="modal"> Close </button>
-            </div>
-          <% end %>
+          </div>
+          <div class="message"></div>
+          <div class="modal-footer">
+            <%= f.submit "Update image", class: "btn btn-primary closemodal" %>
+            <button type="button" class="btn btn-secondary btn-close-modal" data-dismiss="modal"> Close </button>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

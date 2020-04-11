@@ -1,0 +1,37 @@
+<div class="col-lg-6 offset-lg-3">
+  <h3 class="spree-header spree-mb-large spree-mt-large">Edit Product</h3>
+  <%= form_for @product, url: admin_product_path, method: :put do |f| %>
+
+    <%= render "users/shared/error_messages", object: @product  %>
+
+    <div class="form-group mb-5">
+      <%= f.label "Name product", class: "spree-flat-text" %>
+      <%= f.text_field :name, autofocus: true, class: "spree-flat-input" %>
+    </div>
+    <div class="form-group mb-5">
+      <%= f.label "Price product", class: "spree-flat-text" %>
+      <%= f.text_field :price, autofocus: true, class: "spree-flat-input" %>
+    </div>
+
+    <div class="form-group mb-5">
+      <%= f.label "Quantity product", class: "spree-flat-text" %>
+      <%= f.text_field :quantity, class: "spree-flat-input" %>
+    </div>
+
+    <div class="form-group mb-5">
+      <%= f.label "Discount product", class: "spree-flat-text" %>
+      <%= f.text_field :discount, class: "spree-flat-input" %>
+    </div>
+
+    <div class="form-group mb-5">
+      <%= f.label "description product", class: "spree-flat-text" %>
+      <%= f.text_area :description, class: "spree-flat-input" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update", class: "btn btn-primary btn-block spree-btn mb-5" %>
+    </div>
+  <% end %>
+
+ <%= link_to "Back", :back, class: "btn btn-primary btn-block spree-btn mb-5" %>
+</div>
