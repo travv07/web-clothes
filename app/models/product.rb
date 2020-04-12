@@ -9,4 +9,26 @@ class Product < ApplicationRecord
   validates :name, presence: true
   validates :quantity, presence: true
   validates :price, presence: true
+
+  scope :ordered_by_price, -> (sort_params) {
+    if sort_params == "desc"
+      order(price: :desc)
+    elsif sort_params == "asc"
+      order(price: :asc)
+    else
+      order(id: :desc)
+    end
+  }
+  scope :by_price, -> (price_param) {
+    if price_param == "max_50"
+      where("price <= 50")
+    elsif price_param == "min_50_max_100"
+      where("price between 50 and 100")
+    elsif price_param == "min_100_max_1000"
+      where("price between 100 and 1000")
+    else
+      all
+    end
+  }
+
 end

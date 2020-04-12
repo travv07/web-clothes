@@ -10,16 +10,13 @@
   <div class="dropdown-menu text-right plp-sort-dropdown">
     <ul class="pt-1 plp-sort-dropdown-ul">
       <li class="p-3 plp-sort-dropdown-ul-li--active">
-        <a href="">DEFAULT</a>
+        <%= link_to "DEFAULT", products_path %>
       </li>
-      <li class="p-3 plp-sort-dropdown-ul-li">
-        <a href="">NEWEST FIRST</a>
+      <li class="p-3 plp-sort-dropdown-ul-li--active">
+        <%= link_to "PRICE (HIGH - LOW)", products_path(sort_by: "desc") %>
       </li>
-      <li class="p-3 plp-sort-dropdown-ul-li">
-        <a href="">PRICE (HIGH - LOW)</a>
-      </li>
-      <li class="p-3 plp-sort-dropdown-ul-li">
-        <a href="">PRICE (LOW - HIGH)</a>
+      <li class="p-3 plp-sort-dropdown-ul-li--active">
+        <%= link_to "PRICE (LOW - HIGH)", products_path(sort_by: "asc") %>
       </li>
     </ul>
   </div>
@@ -32,33 +29,47 @@
       </div>
       <div id="collapseFilterPrice" class="collapse " aria-labelledby="filtersPrice">
         <div class="card-body px-0 pt-1">
-          <a class="d-block" href="/products?price=Less+than+%2450">
+          <%= link_to products_path(price: "max_50"), class: "d-block" do %>
             <div class="d-inline-block py-1 px-2 m-1 text-uppercase plp-filters-card-item ">
               Less than $50
             </div>
-          </a>
+          <% end %>
+          <%= link_to products_path(price: "min_50_max_100"), class: "d-block" do %>
+            <div class="d-inline-block py-1 px-2 m-1 text-uppercase plp-filters-card-item ">
+              $50 - $100
+            </div>
+          <% end %>
+          <%= link_to products_path(price: "min_100_max_1000"), class: "d-block" do %>
+            <div class="d-inline-block py-1 px-2 m-1 text-uppercase plp-filters-card-item ">
+              $100 - $1000
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
   <div class="col-md-12 col-lg-9" data-hook="homepage_products">
     <div class="row">
-      <% @products.each do |product| %>
-        <div class="col-sm-4 col-6 mb-3 mb-md-4 pr-sm-0 pr-md-0 pl-md-4 pl-sm-4 pl-0 pr-2">
-          <a class="h-100 d-flex flex-column justify-content-between" href="">
-            <% if product.image.url  %>
-              <%= image_tag product.image.url, class: "image-products w-100" %>
-            <% else %>
-              <%= image_tag "sale1.jpg", class: "image-products w-100" %>
-            <% end %>
-            <div>
-              <div class="product-component-name" title="Oversize Sweatshirt">
-                <%= product.name %>
+      <% if @products.count != 0 %>
+        <% @products.each do |product| %>
+          <div class="col-sm-4 col-6 mb-3 mb-md-4 pr-sm-0 pr-md-0 pl-md-4 pl-sm-4 pl-0 pr-2">
+            <a class="h-100 d-flex flex-column justify-content-between" href="">
+              <% if product.image.url  %>
+                <%= image_tag product.image.url, class: "image-products w-100" %>
+              <% else %>
+                <%= image_tag "sale1.jpg", class: "image-products w-100" %>
+              <% end %>
+              <div>
+                <div class="product-component-name" title="Oversize Sweatshirt">
+                  <%= product.name %>
+                </div>
+                <div class="product-component-price"><%= number_to_currency(product.price, :unit => "$") %></div>
               </div>
-              <div class="product-component-price"><%= number_to_currency(product.price, :unit => "$") %></div>
-            </div>
-          </a>
-        </div>
+            </a>
+          </div>
+        <% end %>
+      <% else %>
+        <h3 class="text-uppercase text-center spree-mb-large spree-mt-large spree-header" >Haven't Prodcut</h3>
       <% end %>
     </div>
     <div class="float-right">
