@@ -53,7 +53,7 @@
       <% if @products.count != 0 %>
         <% @products.each do |product| %>
           <div class="col-sm-4 col-6 mb-3 mb-md-4 pr-sm-0 pr-md-0 pl-md-4 pl-sm-4 pl-0 pr-2">
-            <a class="h-100 d-flex flex-column justify-content-between" href="">
+            <%= link_to  product_path(product), class: "h-100 d-flex flex-column justify-content-between" do %>
               <% if product.image.url  %>
                 <%= image_tag product.image.url, class: "image-products w-100" %>
               <% else %>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="product-component-price"><%= number_to_currency(product.price, :unit => "$") %></div>
               </div>
-            </a>
+            <% end %>
           </div>
         <% end %>
       <% else %>
