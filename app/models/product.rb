@@ -2,8 +2,8 @@ class Product < ApplicationRecord
   acts_as_paranoid
   mount_uploader :image, AvatarUploader
   has_many :thumbnails
-  belongs_to :categories, optional: true
-  belongs_to :comments, optional: true
+  belongs_to :category
+  has_many :comments
   has_many :cart_items
 
   validates :name, presence: true

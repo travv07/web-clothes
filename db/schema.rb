@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200411052422) do
+ActiveRecord::Schema.define(version: 20200412044042) do
 
   create_table "cart_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "carts_id"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20200411052422) do
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "type"
+    t.string "category_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "parent_id"
@@ -50,8 +50,6 @@ ActiveRecord::Schema.define(version: 20200411052422) do
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "categories_id"
-    t.bigint "comments_id"
     t.string "name"
     t.text "description"
     t.decimal "price", precision: 10
@@ -61,8 +59,8 @@ ActiveRecord::Schema.define(version: 20200411052422) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.datetime "deleted_at"
-    t.index ["categories_id"], name: "index_products_on_categories_id"
-    t.index ["comments_id"], name: "index_products_on_comments_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["deleted_at"], name: "index_products_on_deleted_at"
   end
 
@@ -103,7 +101,6 @@ ActiveRecord::Schema.define(version: 20200411052422) do
   add_foreign_key "cart_items", "carts", column: "carts_id"
   add_foreign_key "cart_items", "products", column: "products_id"
   add_foreign_key "carts", "users", column: "users_id"
-  add_foreign_key "products", "categories", column: "categories_id"
-  add_foreign_key "products", "comments", column: "comments_id"
+  add_foreign_key "products", "categories"
   add_foreign_key "thumbnails", "products"
 end
