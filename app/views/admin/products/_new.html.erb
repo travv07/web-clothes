@@ -24,6 +24,11 @@
       <%= f.text_area :description, placeholder: "DESCRIPTION PRODUCT", class: "spree-flat-input" %>
     </div>
 
+    <div class="form-group mb-5">
+      <%= f.label "Category product", class: "spree-flat-text" %>
+      <%= f.select :category_id, options_for_select(Category.pluck(:category_type, :id)), {}, {class: "form-control underlined"} %>
+    </div>
+
     <div class="actions">
       <%= f.submit "CREATE", class: "btn btn-primary btn-block spree-btn mb-5" %>
     </div>
