@@ -31,4 +31,6 @@ class Product < ApplicationRecord
     end
   }
 
+  scope :by_category, -> (category) {where("category_id = ?", category)}
+  scope :by_not_product, -> (product_id) {where.not("id = ?", product_id)}
 end

@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :users, only: :show do
     patch "update_image", on: :member
   end
+
+  resources :products, only: [:index, :show]
+
   namespace :admin do
     resources :products do
       patch "update_image", on: :member
@@ -16,6 +19,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products, only: :index
+
 
 end

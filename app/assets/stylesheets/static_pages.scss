@@ -549,3 +549,99 @@
 .plp-sort-dropdown.show {
   z-index: 5;
 }
+#breadcrumbs {
+  padding: 0;
+}
+.breadcrumb {
+    background: none;
+    padding: 0.5rem 0;
+    margin: 0;
+}
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background: #ffffff;
+    border-radius: 0.25rem;
+}
+.breadcrumb li {
+    color: black;
+    font-size: 0.6875rem;
+}
+.image_products{
+  width: 430px;
+  height: 500px;
+  margin: 0 auto;
+}
+.product-details-title {
+    font-size: 1.75rem;
+    color: black;
+}
+.add-to-cart-form-price {
+    font-size: 1.75rem;
+}
+.add-to-cart-form-price {
+      color: black;
+    font-weight: 500;
+}
+
+.add-to-cart-form .quantity-select button {
+    background: #ffffff;
+    color: #212529;
+    touch-action: manipulation;
+}
+.quantity-select-decrease, .quantity-select-increase {
+    font-size: 1.25rem;
+    border: 1px solid #e2e2e2;
+}
+.quantity-select-decrease, .quantity-select-increase {
+    border-radius: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    background-color: #ffffff;
+    border: 1px solid #e2e2e2;
+}
+
+.quantity-select-value {
+    font-size: 1.25rem;
+    border: 1px solid #e2e2e2;
+}
+.quantity-select-value {
+    font-size: 1.75rem;
+    border: 2px solid #e2e2e2;
+}
+.quantity-select-value {
+    width: 100%;
+    font-size: 1.25rem;
+    font-weight: 500;
+    border-radius: 0;
+    border: 1px solid #e2e2e2;
+    height: auto;
+    z-index: 1;
+}
+.spree-flat-input, .spree-flat-select {
+    background: #ffffff;
+    color: #212529;
+}
+
+.quantity-select {
+    width: 136px;
+    height: 45px;
+}
+
+.carousel-icon-control-rounded {
+    width: 44px;
+    height: 44px;
+}
+.carousel-icon-control-rounded {
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    background: #f2f2f2;
+    color: black;
+}
+.carousel-inner {
+    padding: 0px 50px 0px 50px;
+}
