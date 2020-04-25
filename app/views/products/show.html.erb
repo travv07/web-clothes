@@ -66,7 +66,7 @@
 </div>
 <!--Carousel Wrapper-->
   <p class="font-weight-bold text-center text-uppercase product-details-carousel-text">You may also like</p>
-  <% if @products_active && @products %>
+  <% if @products_active.present? && @products.present? %>
     <div id="multi-item-example" class="carousel slide carousel-multi-item mb-3" data-ride="carousel">
       <!--Indicators-->
       <ol class="carousel-indicators">
@@ -124,6 +124,8 @@
       </div>
       <!--/.Controls-->
     </div>
+  <% else %>
+    <p class="text-center">Haven't Products For This Product</p>
   <% end %>
 <!--/.Carousel Wrapper-->
 <%= javascript_include_tag('quantity_product.js') %>
